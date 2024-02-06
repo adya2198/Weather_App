@@ -11,7 +11,7 @@
     display: flex;
     justify-content: center;
     gap: 10px;
-    padding-top: 40px;
+    padding-top: 60px;
 }
 .top-bar input{
     display: flex;
@@ -41,7 +41,45 @@
     width: 20px;
 }
 .weather-image{
-    margin-top: 30px;
+    height: 150px;
+    margin-top: 60px;
     display: flex;
     justify-content: center;
+}
+.weather-temp{
+    display: flex;
+    color: aliceblue;
+    justify-content: center;
+    font-size: 100px;
+    font-weight: 500;
+}
+.weather-location{
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    font-size: 70px;
+    font-weight: 300;
+}
+.data-container{
+    margin-top: 50px;
+    justify-content: center;
+    display: flex;
+    color: aliceblue;
+}
+.element{
+    align-items: flex-start;
+    gap: 15px;
+    margin: auto;
+    display: flex;
+}
+.data{
+    font-size: 20px;
+    font-weight: 400;
+}
+.text{
+    font-size: 15px;
+    font-weight: 400;
+}
+.icon{
+    margin-top: 5px;
 }
