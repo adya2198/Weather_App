@@ -10,7 +10,6 @@ import snow_icon from "../Assets/snow1.png";
 import wind_icon from "../Assets/wind1.png";
 import cloud_icon from "../Assets/cloud1.png";
 
-
 const WeatherApp = () =>{
     let api_key="0b719c8e41290dc00d8907b7ed3e67f3";
     const [wicon,setWicon]=useState(rain_icon);
