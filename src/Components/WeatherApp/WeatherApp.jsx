@@ -9,6 +9,8 @@ import rain_icon from "../Assets/rain1.png";
 import snow_icon from "../Assets/snow1.png";
 import wind_icon from "../Assets/wind1.png";
 import cloud_icon from "../Assets/cloud1.png";
+import Feelslike_icon from "../Assets/feelslike.png";
+import airpressure_icon from "../Assets/pressure.png";
 
 const WeatherApp = () =>{
     let api_key="0b719c8e41290dc00d8907b7ed3e67f3";
@@ -29,11 +31,15 @@ const WeatherApp = () =>{
             const wind = document.getElementsByClassName("wind-rate");
             const temperature = document.getElementsByClassName("weather-temp");
             const location = document.getElementsByClassName("weather-location");
+            const feels=document.getElementsByClassName("feels-like");
+            const pressure=document.getElementsByClassName("air-pressure");
     
             if (humidity.length > 0) humidity[0].innerHTML = data.main.humidity+"%";
             if (wind.length > 0) wind[0].innerHTML = Math.floor(data.wind.speed)+"Kmph";
             if (temperature.length > 0) temperature[0].innerHTML = Math.floor(data.main.temp)+"°C";
             if (location.length > 0) location[0].innerHTML = data.name;
+            if (feels.length > 0) feels[0].innerHTML = Math.floor(data.main.feels_like)+"°C";
+            if (pressure.length > 0) pressure[0].innerHTML = data.main.pressure+"hPa";
 
             if(data.weather[0].icon === "01d" || data.weather[0].icon === "01n"){
                 setWicon(clear_icon);
@@ -92,7 +98,22 @@ const WeatherApp = () =>{
                         <div className="text">Wind Speed</div>
                     </div>
                 </div>
-                
+            </div>
+            <div className="data-container1">
+                <div className="element">
+                    <img src={Feelslike_icon} alt="" className='icon'/>
+                    <div className="data">
+                        <div className="feels-like">26°C</div>
+                        <div className="text">Feels like</div>
+                    </div>
+                </div>
+                <div className="element">
+                    <img src={airpressure_icon} alt="" className='icon'/>
+                    <div className="data">
+                        <div className="air-pressure">1017hPa</div>
+                        <div className="text">Air pressure</div>
+                    </div>
+                </div>
             </div>
         </div>
     )

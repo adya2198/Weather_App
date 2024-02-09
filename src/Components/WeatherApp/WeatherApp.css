@@ -42,7 +42,7 @@
 }
 .weather-image{
     height: 150px;
-    margin-top: 60px;
+    margin-top: 20px;
     display: flex;
     justify-content: center;
 }
@@ -66,6 +66,12 @@
     display: flex;
     color: aliceblue;
 }
+.data-container1{
+    margin-top: 20px;
+    justify-content: center;
+    display: flex;
+    color: aliceblue;
+}
 .element{
     align-items: flex-start;
     gap: 15px;
@@ -82,4 +88,5 @@
 }
 .icon{
     margin-top: 5px;
+    height: 50px;
 }
