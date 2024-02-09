@@ -4,7 +4,7 @@ import './WeatherApp.css'
 import search_icon from "../Assets/search.png";
 import clear_icon from "../Assets/clear.png";
 import drizzle_icon from "../Assets/drizzle1.png";
-import humidity_icon from "../Assets/humidity1.png";
+import humidity_icon from "../Assets/humidity.png";
 import rain_icon from "../Assets/rain1.png";
 import snow_icon from "../Assets/snow1.png";
 import wind_icon from "../Assets/wind1.png";
@@ -13,6 +13,11 @@ import Feelslike_icon from "../Assets/feelslike.png";
 import airpressure_icon from "../Assets/pressure.png";
 
 const WeatherApp = () =>{
+    const handleKeyPress = (event) => {
+        if (event.key === 'Enter') {
+            search();
+        }
+    };
     let api_key="0b719c8e41290dc00d8907b7ed3e67f3";
     const [wicon,setWicon]=useState(rain_icon);
 
@@ -73,13 +78,13 @@ const WeatherApp = () =>{
     return(
         <div className='container'>
             <div className="top-bar">
-                <input type="text" className='cityinput' placeholder='Search'/>
+                <input type="text" className='cityinput' placeholder='Search' onKeyPress={handleKeyPress}/>
                 <div className='search-icon' onClick={()=>{search()}}>
                     <img src={search_icon} alt="loading" />
                 </div>
             </div>
             <div className='weather-image'>
-                <img src={wicon} alt="image loading....." />
+                <img src={wicon} alt="" />
             </div>
             <div className="weather-temp">24°C</div>
             <div className="weather-location">Delhi</div>
